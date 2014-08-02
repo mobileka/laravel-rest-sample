@@ -3,12 +3,12 @@
 class Input
 {
     /**
-	 * Append a new element to a given array
-	 *
-	 * @param  array  $input
-	 * @param  array $append
-	 * @return array
-	 */
+     * Append a new element to a given array
+     *
+     * @param  array $input
+     * @param  array $append
+     * @return array
+     */
     public function appendParam(array $input, $append)
     {
         $input[] = $append;
