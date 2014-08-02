@@ -1,0 +1,14 @@
+{
+    "apiVersion": "1.0.0",
+    "swaggerVersion": "1.2",
+    "apis": [
+        {
+            "path": "/apartments.{format}",
+            "description": "Operations about apartments"
+        },
+        {
+            "path": "/prices.{format}",
+            "description": "Operations about apartment prices"
+        }
+    ]
+}

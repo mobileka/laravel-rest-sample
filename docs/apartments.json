@@ -1,0 +1,156 @@
+{
+    "basePath": "http://local.apartments/api/v1",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0.0",
+    "resourcePath": "/apartments",
+    "apis": [
+        {
+            "path": "/apartments",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get all apartments",
+                    "nickname": "index",
+                    "type": "array",
+                    "notes": "Returns an array of all apartments"
+                },
+                {
+                    "method": "POST",
+                    "summary": "Create a new apartment",
+                    "nickname": "store",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "name",
+                            "type": "string",
+                            "required": true,
+                            "description": "A name of an apartment"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "description",
+                            "type": "string",
+                            "description": "A description of an apartment"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "rooms",
+                            "type": "float",
+                            "description": "How many rooms in an apartment",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "persons",
+                            "type": "integer",
+                            "description": "How much people can apartment accomodate",
+                            "format": "int"
+                        }
+                    ],
+                    "notes": "Creates a new apartment"
+                }
+            ]
+        },
+        {
+            "path": "/apartments/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Find apartment by ID",
+                    "nickname": "show",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment that needs to be fetched",
+                            "format": "int"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Returns an apartment based on ID"
+                },
+                {
+                    "method": "PUT",
+                    "summary": "Update apartment data by ID",
+                    "nickname": "update",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment that needs to be updated",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "name",
+                            "type": "string",
+                            "required": true,
+                            "description": "A name of an apartment"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "description",
+                            "type": "string",
+                            "description": "A description of an apartment"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "rooms",
+                            "type": "float",
+                            "description": "How many rooms in an apartment",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "persons",
+                            "type": "integer",
+                            "description": "How much people can apartment accomodate",
+                            "format": "int"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Updates an apartment based on ID"
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Delete apartment data by ID",
+                    "nickname": "destroy",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment that needs to be deleted",
+                            "format": "int"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Deletes an apartment based on ID"
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}

@@ -1,0 +1,187 @@
+{
+    "basePath": "http://local.apartments/api/v1",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0.0",
+    "resourcePath": "/prices",
+    "apis": [
+        {
+            "path": "/apartments/{apartmentId}/prices",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Find prices of a particular apartment by apartment ID",
+                    "nickname": "index",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "apartmentId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment which prices need to be fetched",
+                            "format": "int"
+                        }
+                    ],
+                    "notes": "Finds prices of a particular apartment by apartment ID"
+                }
+            ]
+        },
+        {
+            "path": "/apartments/{apartmentId}/prices/{priceId}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Find apartment by ID",
+                    "nickname": "show",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "apartmentId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment we are interacting with",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "priceId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment price that needs to be fetched",
+                            "format": "int"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Returns an apartment based on ID"
+                },
+                {
+                    "method": "POST",
+                    "summary": "Create a new apartment price",
+                    "nickname": "store",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "apartmentId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment we are interacting with",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "price",
+                            "type": "float",
+                            "required": true,
+                            "description": "Actual price value",
+                            "format": "float"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "valid_from",
+                            "type": "string",
+                            "description": "A price is valid from this date",
+                            "format": "date"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "valid_to",
+                            "type": "string",
+                            "description": "A price is valid until this date",
+                            "format": "date"
+                        }
+                    ],
+                    "notes": "Creates a new apartment price"
+                },
+                {
+                    "method": "PUT",
+                    "summary": "Update an apartment price",
+                    "nickname": "show",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "apartmentId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment we are interacting with",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "priceId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment price that needs to be fetched",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "price",
+                            "type": "float",
+                            "required": true,
+                            "description": "Actual price value",
+                            "format": "float"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "valid_from",
+                            "type": "string",
+                            "description": "A price is valid from this date",
+                            "format": "date"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "valid_to",
+                            "type": "string",
+                            "description": "A price is valid until this date",
+                            "format": "date"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Updates an apartment price"
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Delete an apartment price",
+                    "nickname": "show",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "apartmentId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment we are interacting with",
+                            "format": "int"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "priceId",
+                            "type": "integer",
+                            "required": true,
+                            "description": "ID of apartment price that needs to be fetched",
+                            "format": "int"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "Not found"
+                        }
+                    ],
+                    "notes": "Deletes an apartment price"
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}
