@@ -3,10 +3,10 @@
 class Price extends BaseModel
 {
     /**
-	 * Table name
-	 *
-	 * @var string
-	 */
+     * Table name
+     *
+     * @var string
+     */
     public $table = 'apartment_prices';
 
     /**
